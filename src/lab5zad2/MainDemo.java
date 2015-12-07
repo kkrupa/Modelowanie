@@ -26,16 +26,20 @@ public class MainDemo {
 		int i;
 		String tekst;
 		
-//		do {
-			System.out.print("Twój wybór: ");
-			i = in.nextInt();
-//		} while ((i !=1) || (i !=2));
-		
-		if(i==2) {
+        System.out.print("Twój wybór: ");
+        i = in.nextInt();
+
+        while (!(i==1 || i==2)) {
+            System.out.print("Wybierz spośród dostępnych opcji: ");
+            i = in.nextInt();
+        }
+
+		if(i == 2) {
 			zapiszRandom.writeToFile();
 		} else {
+
 			System.out.print("Wprowadz tekst: ");
-			tekst = in.nextLine();
+			tekst = in.next();
 			zapiszString.writeToFile(tekst);
 		}
 		

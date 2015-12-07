@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class SaveString {
-PrintWriter out;
+	private PrintWriter out;
 
 	public SaveString (PrintWriter out) throws IOException {
 		this.out = out;
@@ -12,5 +12,6 @@ PrintWriter out;
 	
 	public void writeToFile(String text) {
 		out.println(text);
+		out.close();
 	}
 }

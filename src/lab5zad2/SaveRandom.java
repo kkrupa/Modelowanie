@@ -5,8 +5,8 @@ import java.io.PrintWriter;
 import java.util.Random;
 
 public class SaveRandom {
-	Random random;
-	PrintWriter out;
+	private Random random;
+	private PrintWriter out;
 	private int number;
 	
 	public SaveRandom(PrintWriter out, Random random) throws IOException {
@@ -21,5 +21,6 @@ public class SaveRandom {
 	public void writeToFile() {
 		generateNumber();
 		out.println(number);
+		out.close();
 	}
 }
