@@ -15,6 +15,12 @@ public class MenuItem implements Menu {
         System.out.println("Wykonano operację " + getNazwa());
     }
 
+    @Override
+    public Menu wykonajOpcje(int opcja) {
+        wykonaj();
+        return this;
+    }
+
     public String getNazwa() {
         return nazwa;
     }
@@ -22,6 +28,11 @@ public class MenuItem implements Menu {
     @Override
     public boolean isNode() {
         return false;
+    }
+
+    @Override
+    public MenuNode getNode() {
+        return null;
     }
 
 

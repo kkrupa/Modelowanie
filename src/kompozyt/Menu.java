@@ -5,7 +5,8 @@ package kompozyt;
  */
 public interface Menu {
     public void wykonaj();
+    public Menu wykonajOpcje(int opcja);
     public String getNazwa();
     public boolean isNode();
-
+    public MenuNode getNode();
 }
