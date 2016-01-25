@@ -5,7 +5,7 @@ package Router;
  */
 public interface Command {
 
-//    String getName();
+    String getNazwa();
     void execute();
 
 }

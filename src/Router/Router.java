@@ -8,57 +8,36 @@ import java.util.HashMap;
  */
 public class Router {
 
-    private ArrayList<NetworkInterface> interfaces;
-    private HashMap<String, Command> komendy;
-
-    private String name;
-    private String lastName;
+    private Commands komendy;
+    private NetworkInterfaces interfejsy;
+    private Osoba programista;
     private String version;
 
-    public Router() {
-        interfaces = new ArrayList<NetworkInterface>();
-        komendy = new HashMap<String, Command>();
+    public Router(Osoba programista, String version) {
+        interfejsy = new NetworkInterfaces();
+        komendy = new Commands();
+        this.programista = new Osoba("Kamil", "Krupa");
+        this.version = version;
     }
 
     public void addInterface(String addressIP) {
-        interfaces.add(new NetworkInterface(addressIP));
+        interfejsy.add(new NetworkInterface(addressIP));
     }
 
-    public void addCommand(String nazwa, Command komenda) {
-        komendy.put(nazwa, komenda);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLastName() {
-        return lastName;
+    public void addCommand(Command komenda) {
+        komendy.add(komenda);
     }
 
     public String getVersion() {
         return version;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public ArrayList<NetworkInterface> getInterfaces() {
-        return interfaces;
+    public Osoba getProgramista() {
+        return programista;
     }
 
     public void help() {
-        System.out.println("Programista: " + getName() + " " +
-                getLastName() + ", Version: " + getVersion());
+//        komendy.get("help");
     }
 
     public void show() {

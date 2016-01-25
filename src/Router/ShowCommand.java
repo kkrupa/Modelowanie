@@ -11,10 +11,10 @@ public class ShowCommand implements Command {
         this.router = router;
     }
 
-//    @Override
-//    public String getName() {
-//        return "show";
-//    }
+    @Override
+    public String getNazwa() {
+        return "show";
+    }
 
     @Override
     public void execute() {

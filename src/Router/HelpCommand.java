@@ -11,13 +11,14 @@ public class HelpCommand implements Command {
         this.router = router;
     }
 
-//    @Override
-//    public String getName() {
-//        return "help";
-//    }
+    @Override
+    public String getNazwa() {
+        return "help";
+    }
 
     @Override
     public void execute() {
-        router.help();
+        System.out.println("Programista: " + router.getProgramista().getName() + " " +
+                router.getProgramista().getLastName() + ", Version: " + router.getVersion());
     }
 }
