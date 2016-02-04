@@ -1,5 +1,7 @@
 package Router;
 
+import java.net.InetAddress;
+
 /**
  * Created by kkrupa on 16.01.2016.
  */
@@ -17,4 +19,5 @@ public class NetworkInterface {
     public void setAddressIP(String addressIP) {
         this.addressIP = addressIP;
     }
+
 }

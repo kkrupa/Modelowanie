@@ -1,31 +1,36 @@
 package Router;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by kkrupa on 16.01.2016.
  */
 public class Router {
 
-    private Commands komendy;
-    private NetworkInterfaces interfejsy;
-    private Osoba programista;
-    private String version;
+    private final Commands komendy;
+    private final NetworkInterfaces interfejsy;
+    private final Osoba programista;
+    private final String version;
+    private Iterator<NetworkInterface> iteratorInterfejsow;
 
     public Router(Osoba programista, String version) {
         interfejsy = new NetworkInterfaces();
         komendy = new Commands();
-        this.programista = new Osoba("Kamil", "Krupa");
+
+        this.programista = programista;
         this.version = version;
     }
 
-    public void addInterface(String addressIP) {
-        interfejsy.add(new NetworkInterface(addressIP));
+    public void addInterface(NetworkInterface interfejs) {
+        interfejsy.add(interfejs);
     }
 
     public void addCommand(Command komenda) {
         komendy.add(komenda);
+    }
+
+    public Command getCommand(String nazwaKomendy) {
+        return komendy.get(nazwaKomendy);
     }
 
     public String getVersion() {
@@ -36,15 +41,9 @@ public class Router {
         return programista;
     }
 
-    public void help() {
-//        komendy.get("help");
+    public Iterator<NetworkInterface> getInterfaces() {
+        iteratorInterfejsow = interfejsy.getInterfacesIterator();
+        return iteratorInterfejsow;
     }
 
-    public void show() {
-        int index = 1;
-        for(NetworkInterface interfejs : getInterfaces()) {
-            System.out.println(index + ": " + interfejs.getAddressIP());
-            index++;
-        }
-    }
 }

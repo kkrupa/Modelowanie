@@ -17,7 +17,7 @@ public class Commands {
         komendy.put(komenda.getNazwa(), komenda);
     }
 
-    public Command get(String komenda) {
-        return komendy.get(komenda);
+    public Command get(String nazwaKomendy) {
+        return komendy.get(nazwaKomendy);
     }
 }

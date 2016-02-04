@@ -10,8 +10,8 @@ public class Main {
         TestRouter testRouter = new TestRouter();
         Router router = testRouter.getRouter(programista, "1.0");
 
-        router.show();
-        router.help();
+        router.getCommand("show").execute();
+        router.getCommand("help").execute();
 
     }
 

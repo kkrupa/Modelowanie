@@ -1,5 +1,7 @@
 package Router;
 
+import sun.nio.ch.Net;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -8,15 +10,19 @@ import java.util.Iterator;
  */
 public class NetworkInterfaces {
 
-    //TODO: dodac funkcje, ktora zwraca iterator z interfejsami
     private ArrayList<NetworkInterface> interfaces;
+
+    public NetworkInterfaces() {
+        interfaces = new ArrayList<NetworkInterface>();
+    }
 
     public void add(NetworkInterface interfejs) {
         interfaces.add(interfejs);
     }
 
     public Iterator<NetworkInterface> getInterfacesIterator() {
-        return interfaces.iterator();
+        Iterator<NetworkInterface> iterator = interfaces.iterator();
+        return iterator;
     }
 
     public NetworkInterface getInterface(int index) {
